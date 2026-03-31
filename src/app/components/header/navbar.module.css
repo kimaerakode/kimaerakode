@@ -1,0 +1,21 @@
+.headerbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding-inline: var(--gap);
+  background-color: var(--background);
+  z-index: 7;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--foreground);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: var(--gap-s);
+}
+
+.title {
+  color: var(--title);
+  font-size: 2.4rem;
+}

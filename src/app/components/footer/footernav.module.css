@@ -1,0 +1,28 @@
+.footerbar {
+  width: 100%;
+  padding-inline: var(--gap);
+  position: sticky;
+  bottom: 0;
+  background-color: var(--background);
+  z-index: 7;
+}
+
+.footernav,
+.footernav > * {
+  display: flex;
+}
+
+.footernav {
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid var(--foreground);
+  padding-block: var(--gap-m);
+}
+
+.footernav > * {
+  gap: var(--gap-s);
+}
+
+.themeselect {
+  display: flex;
+}
