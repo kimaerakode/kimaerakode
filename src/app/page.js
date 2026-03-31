@@ -21,8 +21,8 @@ export default function Home() {
                 experiences.
               </span>
               <span>
-                 Based in 
-               <span className="romantic">&nbsp;Copenhagen,</span> Denmark.
+                Based in
+                <span className="romantic">&nbsp;Copenhagen,</span> Denmark.
               </span>
             </p>
           </div>
@@ -33,7 +33,6 @@ export default function Home() {
             <li>UI/UX Design</li>
           </ul>
           <div>
-            {" "}
             <Image
               className={styles.swirl}
               src="/assets/svg/swirl.svg"
@@ -44,7 +43,7 @@ export default function Home() {
           </div>
         </section>
 
-        <Portfolio />
+        {/* <Portfolio /> */}
       </main>
     </div>
   );

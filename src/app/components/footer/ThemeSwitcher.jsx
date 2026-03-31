@@ -1,36 +1,23 @@
 "use client";
-
+import styles from "./footernav.module.css";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 export default function ThemeSwitcher() {
-  const [theme, setThemeState] = useState("light");
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    if (currentTheme === "light" || currentTheme === "dark") {
-      setThemeState(currentTheme);
-      return;
-    }
-
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-    setThemeState(prefersDark ? "dark" : "light");
+    setMounted(true);
   }, []);
 
-  const setTheme = (theme) => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-    setThemeState(theme);
-  };
-
   return (
-    <ul className="menu">
+    <ul className={styles.themes}>
       <li>
         <button
           type="button"
           className="link"
-          aria-pressed={theme === "light"}
+          aria-pressed={mounted ? resolvedTheme === "light" : undefined}
           onClick={() => setTheme("light")}>
           [ Light ]
         </button>
@@ -39,7 +26,7 @@ export default function ThemeSwitcher() {
         <button
           type="button"
           className="link"
-          aria-pressed={theme === "dark"}
+          aria-pressed={mounted ? resolvedTheme === "dark" : undefined}
           onClick={() => setTheme("dark")}>
           [ Dark ]
         </button>

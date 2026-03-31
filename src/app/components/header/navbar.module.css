@@ -11,11 +11,25 @@
   border-bottom: 1px solid var(--foreground);
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   padding-top: var(--gap-s);
 }
 
 .title {
   color: var(--title);
-  font-size: 2.4rem;
+  font-size: calc(2.2rem * var(--scale-factor));
+}
+
+@media screen and (width > 769px) {
+  .navbar {
+    align-items: end;
+  }
+
+  .menu {
+    padding-bottom: var(--gap-m);
+  }
+
+  .title  {
+    font-size: calc(2.4rem * var(--scale-factor));
+  }
 }

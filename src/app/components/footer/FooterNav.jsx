@@ -6,23 +6,25 @@ export default function FooterNav() {
     <>
       <footer className={styles.footerbar}>
         <nav className={styles.footernav}>
-          <div>
+          <div className={styles.meta}>
             <p>Updated: 31 March 2026</p>
-            <span>|</span>
+            <span className="vl">|</span>
 
             <ThemeSwitcher />
           </div>
 
           <ul className="menu">
             <a
-              className="link"
-              href="">
+              className="link disabled"
+              href="https://www.instagram.com/kimaerakode"
+              target="_blank">
               <li>@kimaerakode</li>
             </a>
-            <span>|</span>
+            <span className="vl">|</span>
             <a
               className="link"
-              href="">
+              href="mailto:kimaerakode@gmail.com"
+              target="_blank">
               <li>kimaerakode@gmail.com</li>
             </a>
           </ul>

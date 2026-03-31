@@ -2,6 +2,7 @@ import { localFont } from "next/font/local";
 import "./globals.css";
 import NavBar from "./components/header/NavBar";
 import FooterNav from "./components/footer/FooterNav";
+import Providers from "./providers";
 
 const PPMont = localFont({
   src: "./fonts/PPNeueMontreal-Medium.woff2",
@@ -28,22 +29,17 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
       className={`${PPMont.className} ${PPMont.variable} ${Romantic.variable}`}>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const saved = localStorage.getItem('theme');
-                const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-              } catch (e) {}
-            `,
-          }}
+        <link
+          rel="icon"
+          href="/star-favicon.ico"
         />
       </head>
       <body>
-        <NavBar />
-        {children}
-        <FooterNav />
+        <Providers>
+          <NavBar />
+          {children}
+          <FooterNav />
+        </Providers>
       </body>
     </html>
   );

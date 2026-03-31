@@ -19,10 +19,24 @@
   padding-block: var(--gap-m);
 }
 
-.footernav > * {
-  gap: var(--gap-s);
+.themes {
+  display: flex;
+  gap: var(--gap-m);
 }
 
-.themeselect {
+.meta {
   display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+@media screen and (width > 769px) {
+  .meta {
+    flex-direction: row;
+    gap: var(--gap-m);
+  }
+
+  .footernav > * {
+    gap: var(--gap-s);
+  }
 }

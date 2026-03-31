@@ -12,16 +12,18 @@ const NavBar = () => {
               Kimaerakode
             </a>
           </span>
-          <ul className="menu">
+          <ul className={`${styles.menu} menu`}>
             <a
               className="link"
-              href="">
+              href="https://github.com/kimaerakode"
+              target="blank">
               <li>GitHub</li>
             </a>
-            <span>|</span>
+            <span className="vl">|</span>
             <a
               className="link"
-              href="">
+              href="https://codepen.io/kimaerakode"
+              target="blank">
               <li>CodePen</li>
             </a>
           </ul>
