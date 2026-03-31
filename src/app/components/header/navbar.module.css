@@ -20,6 +20,10 @@
   font-size: calc(2.2rem * var(--scale-factor));
 }
 
+.menu {
+      display: none;
+}
+
 @media screen and (width > 769px) {
   .navbar {
     align-items: end;
@@ -27,6 +31,7 @@
 
   .menu {
     padding-bottom: var(--gap-m);
+
   }
 
   .title  {
